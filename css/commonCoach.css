@@ -1,0 +1,23 @@
+#programTable{
+	width: 870px;
+	text-align: center;
+	border: solid 1px gray;
+	border-collapse: collapse;
+}
+
+#programTable tr th{
+	padding-top: 20px;
+}
+
+tr.even_row{
+	
+}
+
+tr.odd_row{
+	background: rgb(184, 184, 184);
+}
+
+#programTable tr td{
+	padding-top: 20px;
+	padding-bottom: 10px;
+}

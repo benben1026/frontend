@@ -1,0 +1,22 @@
+.Tableprogram{
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	width:800px;
+}
+
+/*#programTable tr{
+	border: 1px solid #ccc;
+}*/
+
+.Tableprogram tr td{
+	width: 100px;
+	height: 30px;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+
+.Tableprogram tr th{
+	height: 30px;
+	border: 1px solid #ccc;
+	text-align: center;
+}

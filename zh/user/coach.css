@@ -1,0 +1,41 @@
+.Tableprogram{
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	width: 900px;
+}
+
+.Tableprogram tr td{
+	padding-top: 20px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+.odd_row{
+	background: rgb(189, 189, 189);
+}
+.even_row{
+
+}
+
+.Tableprogram tr th{
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+/*#programTable tr{
+	border: 1px solid #ccc;
+}
+
+.Tableprogram tr td{
+	width: 100px;
+	height: 30px;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+
+.Tableprogram tr th{
+	width: 100px;
+	height: 30px;
+	border: 1px solid #ccc;
+	text-align: center;
+}*/

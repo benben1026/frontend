@@ -1,0 +1,21 @@
+#coachTable tr td{
+	text-align: center;
+	border-bottom: solid 1px;
+
+}
+
+#coachTable{
+	border-collapse: collapse;
+	display: none;
+	margin-top: 20px;
+}
+
+div.loading{
+	text-align: center;
+}
+
+#loading{
+	margin-top: 25px;
+	width: 50px;
+	height: 50px;
+}

@@ -1,0 +1,48 @@
+#container{
+	border: solid 1px;
+	border-radius: 5px;
+	padding: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#status{
+	width: 950px;
+	border-collapse: collapse;
+	display: none;
+	margin-top: 30px;
+}
+
+#main_body{
+	width: 950px;
+	border-collapse: collapse;
+	display: none;
+}
+
+#main_body tr.odd_row{
+
+}
+
+#main_body tr.even_row, #status tr.even_row{
+	background-color: rgb(203, 203, 203)
+}
+
+#main_body tr td, #status tr td{
+	line-height: 50px;
+	padding-left: 10px;
+}
+
+td.title{
+	width:300px;
+	border-right: solid 1px;
+}
+
+div.loading{
+	text-align: center;
+}
+
+#loading{
+	margin-top: 25px;
+	width: 50px;
+	height: 50px;
+}

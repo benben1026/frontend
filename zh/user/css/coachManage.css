@@ -1,0 +1,12 @@
+.dataTable{
+	width: 900px;
+	border-collapse: collapse;
+	margin-bottom: 40px;
+}
+
+.dataTable tr td, .dataTable tr th{
+	padding-top: 10px;
+	padding-bottom: 20px;
+	border: solid 1px;
+	text-align: center;
+}
