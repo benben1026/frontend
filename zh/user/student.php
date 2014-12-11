@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="student.css">
 
 <script type="text/javascript" src="js/student.js"></script>
+
 <script type="text/javascript">
 
 var sportsTimePerDay;

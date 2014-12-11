@@ -12,15 +12,16 @@
    <?php include_once "../../tracking_code.php"; ?>
   	<?php include('../header/topMenu.php'); ?>
 	<?php include('../header/headerFormA.php'); ?>
+
+	<input  type="hidden" id="token" value= <?php echo "\"" . $_GET['token'] . "\"";?>>
+
 	<div class="container center">
 		<div style="height:50px;"></div>
-	<div class="shadow login" style="height:360px;">
+	<div class="shadow login" style="height:300px;">
 		<ul>
 	    	<li>修改密码</li>
 	        <br/>
 	        <li><input class="reg w2" id="email" type="text" value="" placeholder="邮箱" ></li>
-	        <br/>
-	        <li><input class="reg w2" id="pre-pw" type="password" value="" placeholder="原密码" ></li>
 	        <br/>
 	        <li><input class="reg w2" id="new-pw" type="password" value="" placeholder="新密码" ></li>
 	   		<br/>
@@ -57,22 +58,21 @@
 	});
 
 	$("#change-pw").click(function(){
-		alert
-		$.post("../../../telesport/index.php/login/changePassword",
+		$.post("../../../telesport/index.php/register/resetPassword",
 		{
 			email: $("#email").val(),
-			prepwd: $("#pre-pw").val(),
-			newpwd: $("#new-pw").val(),
-			pwdconf: $("#new-pw-confirm").val()
+			password: $("#new-pw").val(),
+			passConf: $("#new-pw-confirm").val(),
+			token: $("#token").val()
 		},
 		function(data){
-			console.log(data);
 			if(data.status){
-				alert("修改成功!");
-				window.history.back();
+				alert("修改成功！返回主页");
+				window.location.href="../nav/index.php";
 			}
 			else{
-				alert(data.error);
+				alert(data.err+"修改失败！请再次尝试发送修改密码邮件");
+				window.location.href="../user/retrievePassword.php";
 			}
 		});
 	});

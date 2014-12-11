@@ -36,9 +36,9 @@
 			    <li><input class="reg w6" id="height" type="text" value=""  > 厘米</li>
                 <li><input class="reg w6" id="weight" type="text" value=""  > 公斤</li>
                 <li><select class="reg w" id="sportsTimePerDay"></select></li>
-                <li><input  type="radio" value="yes"  name="ifSmoke" id="smoke-yes" checked="checked"> 是
+                <li><input  type="radio" value="yes"  name="ifSmoke" id="smoke-yes"> 是
                     <input  type="radio" value="no" name="ifSmoke" id="smoke-no" > 否</li>
-                <li><input  type="radio" value="yes"  name="ifDrink" id="drink-yes" checked="checked"> 是
+                <li><input  type="radio" value="yes"  name="ifDrink" id="drink-yes"> 是
                     <input  type="radio" value="no" name="ifDrink" id="drink-no" > 否</li>
                 <li><select name="aim" id="aim" class="reg w5"></select></li> 
 			  </ul>
@@ -70,14 +70,22 @@
 	            </div>
     	</div>
 
-
-		<button class="btn btn-form" style="margin-left:50px; width:50px;" id="modify">修改</button>
-		<button class="btn btn-form" id="submit">提交</button>
-		<button class="btn btn-form" id="back">返回</button>
+    	<div style="margin-left:40px;">
+			<ul class="button-set">
+				<li ><button class="btn btn-form"  id="modify">修改</button></li>
+				<li ><button class="btn btn-form" id="submit" style="display:none">提交</button></li>
+				<li style="margin-left:20px;"><button class="btn btn-form" id="back">返回</button></li>
+			</ul>
+		</div>
     </div>
 
 <?php include('../header/footer.php'); ?>
 
+<style type="text/css">
+.button-set li{
+	float:left;
+}
+</style>
 
 <script type="text/javascript">
 
@@ -113,16 +121,16 @@ $("input[type='radio']").attr("disabled", "disabled");
 			$("#weight").val(data.userInfo.weight);
 			$("#age").val(data.userInfo.age);
 			if(data.userInfo.ifSmoke==0){
-				$("#smoke-no").checked="checked";
+				$("#smoke-no").attr("checked",true);
 			}
 			else{
-				$("#smoke-yes").checked="checked";
+				$("#smoke-yes").attr("checked",true);
 			}
 			if(data.userInfo.ifDrink==0){
-				$("#drink-no").checked="checked";
+				$("#drink-no").attr("checked",true);
 			}
 			else{
-				$("#drink-yes").checked="checked";
+				$("#drink-yes").attr("checked",true);
 			}
 
 			$("#illness").val(data.userInfo.illnessDescription);
@@ -150,6 +158,8 @@ $("input[type='radio']").attr("disabled", "disabled");
 		$("textarea").prop("readonly", false);
 		$("select").prop("disabled", false);
 		$("input[type='radio']").prop("disabled", false);
+		$("#submit").show();
+		$("#modify").hide();
 	});
 
 	$("#back").click(function(){
