@@ -60,5 +60,6 @@ function setDataTrainee(data){
 }
 
 $(window).load(function(){
+	while(loginAjax.readyState != 4){};
 	getNewMsg();
 });
