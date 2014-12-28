@@ -19,7 +19,7 @@ $(document).ready(function(){
 
 	<div class="container header">
 		<div class="header-logo">
-			<img src="../../images/logo_vertical_small.png" class="header-logo">
+			<a href="../nav/index.php"><img src="../../images/logo_vertical_small.png" class="header-logo"></a>
 		</div>
 
 		<div>

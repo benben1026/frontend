@@ -183,8 +183,8 @@ function updateCoachTable(data){
 		var row = $('<tr class="hot-coach-data"></tr>');
 		var profile = $('<td><img src="../../images/default.png" alt="Smiley face" height="80" width="80" hspace="20"></img></td>');
 
-		var link = "../../../version0.2/zh/user/commonCoach.php?userId="+ data[i].userId;
-		console.log("link: "+link);
+		var link = "../user/commonCoach.php?userId="+ data[i].userId;
+		//console.log("link: "+link);
 		var name = $('<td><a class="special" href='+link +'>'+ checkValid(data[i]['firstName']) + ' ' + checkValid(data[i]['lastName']) + '</a></td>');
 
 
@@ -284,3 +284,4 @@ function updateProgramTable(data){
 		// table.append(row);
 	}
 }
+

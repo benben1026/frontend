@@ -36,7 +36,7 @@
 					}
 
 				}
-
+				headerGetNewMsg();
 				console.log(data);
 			});
 
@@ -49,14 +49,35 @@
 		});
 	});
 
+	
 
+	function headerGetNewMsg(){
+		if(typeof USERID == 'undefined'){
+			return;
+		}
+		var url = "../../../telesport/index.php/traineeapi/getNewMessage";
+		$.ajax({
+			url: url,
+			type: 'POST',
+			dataType: 'json',
+			success: function(data){
+				console.log(data);
+				var num = data['data']['program'].length + data['data']['chat'].length;
+				num = num > 99 ? '99+' : num;
+				$('span.notice').html(num);
+			},
+			error: function(){
+
+			}
+		});
+	}
   </script>
 
 	<div class='container'>
 		<ul>
 			<li class="ftleft" style="color:#fff"><a href="	" id="homepagelink">主页</a></li>
 			<li class="ftright" id="english"><a href=""> English </a></li>
-			<li id="top-message" style="display:none;" class="ftright"><a href="">消息</a></li>
+			<li id="top-message" style="display:none;" class="ftright"><a href="../user/newMsg.php">消息<span class="notice">0</span></a></li>
 			<li id="logout" style="display:none;" class="ftright"><a href="" id="logoutlink">退出</a></li>
 			<li id="selfpage" style="display:none;" class="ftright"><a href="" id="selfpagelink">个人主页</a></li>
 			<li id="top-user" class="ftright"><a href="" id="loginlink">登入</a></li>

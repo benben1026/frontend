@@ -27,7 +27,7 @@ div.chat_content{
 }
 
 .get_content_li{
-	margin-left: -30px;
+	/*margin-left: -30px;*/
 	margin-top: 10px;
 	width: 160px;
 	padding: 10px;
@@ -43,6 +43,7 @@ div.chat_content{
 	border-radius: 5px;
 	background-color: rgb(140, 255, 185);
 	box-shadow: 5px 5px 5px #888888;
+	right: 0;
 }
 
 .unreached:before{

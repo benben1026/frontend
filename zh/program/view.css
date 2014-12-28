@@ -79,12 +79,14 @@ ul.nav li:hover, ul.nav li:active, ul.nav li:focus {
 }
 
 li span{
+	/*
  	width: 16px;
     height: 16px;
     position:absolute;
     top:0px;
     right:0px;
     background-image:url('icon_delete_16x16.png');
+    */
 }
 
 .midcontent { /*big picture on front page*/

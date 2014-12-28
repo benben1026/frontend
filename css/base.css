@@ -656,3 +656,9 @@ a.special{
 tr.hot-program-data td{
   padding-top: 20px;
 }
+
+span.notice{
+  background-color: red;
+  border-radius: 5px;
+  padding: 2px;
+}
