@@ -18,13 +18,19 @@
   	var USERID;
   	var USERTYPE;
 
+  	var loginAjax;
+
 	$("#logoutlink").attr("href", frontendAddr+"/zh/nav/index.php");
 	$("#loginlink").attr("href", frontendAddr+"/zh/user/login.php");
 	$("#homepagelink").attr("href", frontendAddr+"/zh/nav/index.php");
-	$.get(
 
-		backendAddr+"/index.php/login/getUserType",
-		function(data){
+	loginAjax= $.ajax({
+
+		url: backendAddr+"/index.php/login/getUserType",
+		type: 'GET',
+		dataType: 'json',
+
+		success: function(data){
 			console.log("hello");
 			if(data.status==true)
 			{
@@ -47,7 +53,13 @@
 			}
 
 			console.log(data);
-		});
+		},
+
+		error: function(data){
+
+		}
+
+	});
 
 	$("#logout").click(function(){
 		$.post(backendAddr+"/index.php/login/logout");				
@@ -57,6 +69,27 @@
 		alert("暂无英文版本");
 	});
 
+
+	function headerGetNewMsg(){
+		if(typeof USERID == 'undefined'){
+			return;
+		}
+		var url = "../../../telesport/index.php/traineeapi/getNewMessage";
+		$.ajax({
+			url: url,
+			type: 'POST',
+			dataType: 'json',
+			success: function(data){
+				console.log(data);
+				var num = data['data']['program'].length + data['data']['chat'].length;
+				num = num > 99 ? '99+' : num;
+				$('span.notice').html(num);
+			},
+			error: function(){
+
+			}
+		});
+	}
 
   </script>
 </div>

@@ -24,10 +24,13 @@
 	$("#loginlink").attr("href", frontendAddr+"/zh/user/login.php");
 	$("#homepagelink").attr("href", frontendAddr+"/zh/nav/index.php");
 	
-	loginAjax=$.get(
+	loginAjax= $.ajax({
 
-		backendAddr+"/index.php/login/getUserType",
-		function(data){
+		url: backendAddr+"/index.php/login/getUserType",
+		type: 'GET',
+		dataType: 'json',
+
+		success: function(data){
 			console.log("hello");
 			if(data.status==true)
 			{
@@ -48,9 +51,15 @@
 				}
 
 			}
-			headerGetNewMsg();
+
 			console.log(data);
-		});
+		},
+
+		error: function(data){
+
+		}
+
+	});
 
 	$("#logout").click(function(){
 		$.post(backendAddr+"/index.php/login/logout");				
