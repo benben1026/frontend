@@ -83,7 +83,7 @@ $.get(
 
 <div class="fixed-center">
 	<div class="upload-pesonal-image">
-		<div style="postion:absolute; height:50px; width:100%; text-align:center; background:#eee;">
+		<div style="postion:absolute; height:50px; width:100%; text-align:center; background:#eee; line-height:50px;">
 			修改头像
 		</div>
 	</div>
