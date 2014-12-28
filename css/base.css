@@ -505,9 +505,9 @@ button#left, button#right{
   left: 0;
   z-index: 100;
   background-color:#000;
-  filter:alpha(Opacity=80);
-  -moz-opacity:0.8;
-  opacity: 0.8;
+  filter:alpha(Opacity=50);
+  -moz-opacity:0.5;
+  opacity: 0.5;
   text-align: center;
   display: none;
 }

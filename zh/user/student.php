@@ -50,6 +50,26 @@ $.get(
 
 </script>
 
+<style type="text/css">
+.edit{
+	position:absolute; 
+	top:0px; 
+	right:0px;
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+.upload-pesonal-image{
+	position: absolute;
+	top: -200px;
+	left: -200px;
+	height: 400px;
+	width: 400px;
+	background: #fff;
+	display: none;
+}
+</style>
+
 </head>
 
 <body>
@@ -58,14 +78,29 @@ $.get(
 
 <?php include('../header/headerFormB.php'); ?>
 
+<div class="mask">
+</div>
+
+<div class="fixed-center">
+	<div class="upload-pesonal-image">
+		<div style="postion:absolute; height:50px; width:100%; text-align:center; background:#eee;">
+			修改头像
+		</div>
+	</div>
+</div>
 
 <div class="full">
 	<div class="container">
 	<!-- <input type="hidden" id="userId" value=<?php echo "\"" . $_GET['userId'] . "\"";?>> -->
 		<br/>
 		<div>
-			<div style="float:left;">
-				<img src="../../images/default.png" height="200px;">
+			<div style="float:left; position:relative;">
+				<div>
+					<img src="../../images/default.png" height="200px;">
+				</div>
+				<div class="edit">
+					<img src="../../images/edit.png" height="30px;" title="编辑个人头像">
+				</div>
 			</div>
 			<div style="float:left; margin-left:60px; margin-right:60px;">
 				<ul>
@@ -149,6 +184,18 @@ $.get(
 // 	}); 
 
 // });
+
+
+$(document).ready(function(){
+	$(".edit").click(function(){
+		$(".mask").show();
+		$(".upload-pesonal-image").show();
+	});
+	$(".mask").click(function(){
+		$(".mask").hide();
+		$(".upload-pesonal-image").hide();
+	});
+});
 
 </script>
 
